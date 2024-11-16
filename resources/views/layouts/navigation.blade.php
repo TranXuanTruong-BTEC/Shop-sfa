@@ -1,7 +1,7 @@
-<nav x-data="{ open: false }" class="bg-gradient-to-r from-indigo-600 to-purple-600">
+<nav x-data="{ open: false }" class="bg-purple-600 shadow-lg">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between items-center h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -12,10 +12,9 @@
             </div>
 
             <!-- Center Navigation Links -->
-            <div class="hidden sm:flex sm:items-center space-x-6">
-                <!-- Trang chủ - Thêm mới -->
+            <div class="hidden sm:flex sm:items-center space-x-4">
                 <x-nav-link :href="url('/')" :active="request()->is('/')" 
-                           class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                           class="text-white transition duration-300 ease-in-out px-4 py-2 rounded-md flex items-center hover:bg-purple-700 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
@@ -23,9 +22,8 @@
                     <span>Trang chủ</span>
                 </x-nav-link>
 
-                <!-- Dashboard -->
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" 
-                           class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                           class="text-white transition duration-300 ease-in-out px-4 py-2 rounded-md flex items-center hover:bg-purple-700 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
@@ -33,9 +31,8 @@
                     <span>Dashboard</span>
                 </x-nav-link>
 
-                <!-- Categories -->
                 <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')"
-                           class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
+                           class="text-white transition duration-300 ease-in-out px-4 py-2 rounded-md flex items-center hover:bg-purple-700 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
@@ -43,9 +40,8 @@
                     <span>Danh mục</span>
                 </x-nav-link>
 
-                <!-- Products -->
                 <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')"
-                           class="nav-link {{ request()->routeIs('admin.products.*') ? 'active' : '' }}">
+                           class="text-white transition duration-300 ease-in-out px-4 py-2 rounded-md flex items-center hover:bg-purple-700 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
@@ -53,9 +49,8 @@
                     <span>Sản phẩm</span>
                 </x-nav-link>
 
-                <!-- Orders -->
                 <x-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')"
-                           class="nav-link {{ request()->routeIs('admin.orders.*') ? 'active' : '' }}">
+                           class="text-white transition duration-300 ease-in-out px-4 py-2 rounded-md flex items-center hover:bg-purple-700 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
@@ -142,7 +137,7 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-base text-gray-300">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
 
@@ -151,7 +146,6 @@
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
-                <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
